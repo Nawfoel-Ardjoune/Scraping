@@ -1,4 +1,5 @@
 # PROJET DE SCRAPPING
+---
 
 ## CONTEXT :
   Ce projet est à des fins purement éducatives, personnel et non lucrative. Il est fait dans le cadre de mon stage de validatin de Master 1.
@@ -39,3 +40,7 @@
     1. Le Programme :
         1. Programmation d'un script simple pour trouvé des mots clef.
         2. Parcourir les pages et trouver le mots clef. 
+        3. Extraire le nom et le lien.
+        4. Mettre à jour la base de donnée avec les nouvelles information.
+     2. L'interface :
+        1. Faire une page. 
