@@ -42,5 +42,7 @@
         2. Parcourir les pages et trouver le mots clef. 
         3. Extraire le nom et le lien.
         4. Mettre à jour la base de donnée avec les nouvelles information.
-     2. L'interface :
+    2. L'interface :
         1. Faire une page. 
+        2. Transformer cette page en interface.
+        3. ajouter les fonctionnalitées. 
