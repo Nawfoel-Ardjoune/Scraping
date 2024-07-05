@@ -34,16 +34,22 @@
     Les données devrais être :
     * Liens.
     * Nom.
-    * Adresse mail
+    * Adresse mail.
     * Descriptif.
 
-  ### Plan :
+  ### Réalisation :
     1. Le Programme :
-        1. Programmation d'un script simple pour trouvé des mots clef.
-        2. Parcourir les pages et trouver le mots clef. 
-        3. Extraire le nom le lien et l'adresse mail.
-        4. Mettre à jour la base de donnée avec les nouvelles informations.
+        1. [] Programmation d'un script simple.
+           1. Connexion à la page.
+           2. Parcour des profiles. 
+           3. Récolte des données.
+        2. [] Parcourir les profile et extraire les informations. 
+        3. [] Mettre à jour la base de donnée avec les nouvelles informations.
     2. L'interface :
-        1. Faire une page. 
-        2. Transformer cette page en interface.
-        3. ajouter les fonctionnalitées. 
+        1. [] Concevoir un interface utilisateur ergonomique en web. 
+        2. [] Ajouter les fonctionnalitées.
+        3. [] Transformer cet interface web en application graphique.
+
+  ### Divers :
+    [] En apprendre plus sur les requêtes
+    [] Voir comment sont fait les module de profile et extraire les informations pertinante. 

@@ -1,27 +1,30 @@
 import requests
 from bs4 import BeautifulSoup
-import scrapy 
 
 #Les Parametres
+# Likedin sera https://www.linkedin.com/search/results/people/+reste de la requete
+# exemple : ?keywords=Gestionnaire%20de%20projets ici avec mot clef (voir les autres options type)
+# potentielement voir le prestataire qui réalise ca.
+# Il y a des accès premium
 url = 'https://fr.wikipedia.org/wiki/Cic%C3%A9ron'
+
 #Imitation des navigateur de recherche
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    #,'Cookie': 'consent=accepted'  # Ajouter un cookie de consentement si j'arrive pas à passer outre
+    #,'Cookie': 'consent=accepted'  # Ajouter un cookie de consentement si j'arrive pas à passer outre vois plus bas
 }
 #Les mots clef utilisé pour la recherche
 mot_clef = ["italie"]
-
 
 #Request de connexion au site
 rep = requests.get(url,headers=headers) 
 
 if rep.status_code == 200:
   # Parser le contenu de la réponse
-  soup = BeautifulSoup(rep.content, 'lxml')
+  soup = BeautifulSoup(rep.content, 'lxml') #'html parser' possible
 
   ### LE METTRE DANS UN TEST ###
-  # Supposons que le pop-up ait une classe 'cookie-consent'
+  #Supposons que le pop-up ait une classe 'cookie-consent'
   #popup = soup.find(class_='cookie-consent')
   #if popup:
   #  popup.decompose() #je supprime le popup
@@ -36,3 +39,5 @@ if rep.status_code == 200:
 
 else:
     print(f'Échec de la requête: {rep.status_code}')
+
+###
