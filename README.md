@@ -38,17 +38,34 @@
     * Descriptif.
 
   ### Réalisation :
-    1. Le Programme :
-        1. [] Programmation d'un script simple.
-           1. Connexion à la page.
-           2. Parcour des profiles. 
-           3. Récolte des données.
-        2. [] Parcourir les profile et extraire les informations. 
-        3. [] Mettre à jour la base de donnée avec les nouvelles informations.
-    2. L'interface :
+    1. [] Programmation du Script :
+        1. [] Phase de connexion.
+           1. [x] Connexion à la page.
+              1. [x] Connexion.
+                 1. [X] Options pour les popup.
+                 2. [] Options de crédibilité.
+              2. [] Coffection de meilleures Requêtes.
+                 1. [] Redirections vers les pages des profiles désiré.
+                 2. [] Enregistrement des intitulés de poste. 
+        2. [] Extraire les informations.
+           1. [] Parcourt de la Page.
+              1. [] Sélectionner les Profiles.
+              2. [] Extraire les données
+           2. [] Parcourir Les autres profiles. 
+    2. Phase de Traitement
+       1.  [] Crée une structure ou un tableaux qui contient les informations par personnes.
+       2.  [] Vérifier que les informations, ne pas faire de doublons.
+       3.  [] Enregistré ou mettre à jours la base de donnée.
+    3. L'interface :
         1. [] Concevoir un interface utilisateur ergonomique en web. 
         2. [] Ajouter les fonctionnalitées.
-        3. [] Transformer cet interface web en application graphique.
+        3. [] Ajouter un volet déroulant pour les intitulé de postes.
+        4. [] Transformer cet interface web en application graphique.
+    4. Juridique
+       1. [] Envoyé un mail pour les autorisations du bot. // robots.txt
+    5. Maintenance et mise à jours
+       1. [] Ajouter des fonctionnalités.
+       2. [] Faire un dashbord pour le backoffice.
 
   ### Divers :
     [] En apprendre plus sur les requêtes
