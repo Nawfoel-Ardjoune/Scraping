@@ -1,5 +1,9 @@
 .DS_Store
 Informations.txt
 elem.html
-.gitignore
-.gitattributes
+target/
+out/
+build/
+.env
+*.local
+
