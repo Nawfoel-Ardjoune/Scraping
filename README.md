@@ -2,7 +2,7 @@
 ---
 
 ## CONTEXT
-Ce projet est à des fins purement éducatives, personnel et non lucratif. Il est fait dans le cadre de mon stage de validatin de Master 1.
+Ce projet est à des fins purement éducatives, personnelles et non lucratives. Il est réalisé dans le cadre de mon stage de validation de master 1 informatique.
 
 ## LES TECHNOLOGIES
 
