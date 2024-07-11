@@ -74,12 +74,12 @@ Les données devrais être :
       - [ ] Volet déroulant pour les intitulés de postes
 
 3. Juridique
-       - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
-       - [ ] Voir avec des avocats.
+      - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
+      - [ ] Voir avec des avocats.
 
 4. Maintenance et mises à jour
-       - [ ] étude des fonctionnalités type.
-       - [ ] Dashboard pour le backoffice
+      - [ ] étude des fonctionnalités type.
+      - [ ] Dashboard pour le backoffice
 
 ### Divers
    - [ ] En apprendre plus sur les requêtes 
