@@ -2,7 +2,7 @@
 ---
 
 ## CONTEXT
-Ce projet est à des fins purement éducatives, personnel et non lucrative. Il est fait dans le cadre de mon stage de validatin de Master 1.
+Ce projet est à des fins purement éducatives, personnel et non lucratif. Il est fait dans le cadre de mon stage de validatin de Master 1.
 
 ## LES TECHNOLOGIES
 
@@ -46,21 +46,22 @@ Les données devrais être :
 ### Réalisation
 
 1. Programmation du Script :
-    1. - [ ] Phase de connexion
+    1. - [Fonctionnel] Phase de connexion
            - [x] Connexion à la page
            - [x] Options pour les pop-ups
            - [ ] Options de crédibilité
-           - [ ] Redirections vers les pages des profils désirés
-    2. - [ ] Extraire les informations
+           - [X] Redirections vers la page des profils
+    2. - [Fonctionnel] Extraire les informations
            - [ ] Parcours de la page
            - [ ] Sélectionner les profils
-           - [ ] Extraire les données
+           - [x] Extraire des données
            - [ ] Parcourir les autres profils
     3. - [ ] Phase de traitement
-           - [ ] Créer une structure ou un tableau qui contient les informations par personne
+           - [ ] Base de données contenant les informations
            - [ ] Vérifier les informations pour éviter les doublons
            - [ ] Enregistrer ou mettre à jour la base de données
-    4. Divers
+           - [ ] Retourner les informations sous forme d'un tableau excel
+    4. - [ ] Divers
            - [ ] Enregistrement des intitulés de poste
            - [ ] Confections de requêtes complexe
            - [ ] Options pour les cookies
@@ -70,6 +71,7 @@ Les données devrais être :
   3.  - [ ] Transformer cette interface web en application graphique
       - [ ] Options De connexion (headers, auth, etc...)
       - [ ] Volet déroulant pour les intitulés de postes
+      - [ ] Visibilité sur les résultats (photo de profile)
 3. Juridique
     - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
     - [ ] Voir avec des avocats.
@@ -78,7 +80,6 @@ Les données devrais être :
     - [ ] Dashboard pour le backoffice
 
 ### Divers
-
    - [ ] En apprendre plus sur les requêtes 
 
 ## Les Features
