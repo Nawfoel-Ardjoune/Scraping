@@ -38,8 +38,9 @@ Ce projet est à des fins purement éducatives, personnel et non lucratif. Il es
 ### Les données
 
 Les données devrais être :  
-* Liens.
-* Nom.
+* Liens du profile.
+* Nom complet.
+* Localisation.
 * Adresse mail.
 * Descriptif.
 
@@ -68,10 +69,11 @@ Les données devrais être :
 
 2. L'Interface
       - [ ] Concevoir une interface utilisateur ergonomique en web
-      - [ ] Implémentations des fonctionnalités aux bouttons.
+      - [ ] Implémentater les fonctionnalités aux bouttons.
       - [ ] Transformer cette interface web en application graphique
       - [ ] Options De connexion (headers, auth, etc...)
       - [ ] Volet déroulant pour les intitulés de postes
+      - [ ] Volet déroulant pour l'historique de recherche
 
 3. Juridique
       - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
