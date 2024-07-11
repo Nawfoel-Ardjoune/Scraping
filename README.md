@@ -45,7 +45,7 @@ Les données devrais être :
 
 ### Réalisation
 
-1. Programmation du Script :
+1. Le Programmation
     1. - [Fonctionnel] Phase de connexion
            - [x] Connexion à la page
            - [x] Options pour les pop-ups
@@ -65,19 +65,21 @@ Les données devrais être :
            - [ ] Enregistrement des intitulés de poste
            - [ ] Confections de requêtes complexe
            - [ ] Options pour les cookies
-2. L'interface
-  1.  - [ ] Concevoir une interface utilisateur ergonomique en web
-  2.  - [ ] Implémentations des fonctionnalités aux bouttons.
-  3.  - [ ] Transformer cette interface web en application graphique
+
+2. L'Interface
+      - [ ] Concevoir une interface utilisateur ergonomique en web
+      - [ ] Implémentations des fonctionnalités aux bouttons.
+      - [ ] Transformer cette interface web en application graphique
       - [ ] Options De connexion (headers, auth, etc...)
       - [ ] Volet déroulant pour les intitulés de postes
-      - [ ] Visibilité sur les résultats (photo de profile)
+
 3. Juridique
-    - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
-    - [ ] Voir avec des avocats.
+       - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
+       - [ ] Voir avec des avocats.
+
 4. Maintenance et mises à jour
-    - [ ] étude des fonctionnalités type.
-    - [ ] Dashboard pour le backoffice
+       - [ ] étude des fonctionnalités type.
+       - [ ] Dashboard pour le backoffice
 
 ### Divers
    - [ ] En apprendre plus sur les requêtes 
