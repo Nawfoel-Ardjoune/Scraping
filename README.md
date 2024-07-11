@@ -1,11 +1,13 @@
 # PROJET DE SCRAPPING
 ---
 
-## CONTEXT :
+## CONTEXT
 Ce projet est à des fins purement éducatives, personnel et non lucrative. Il est fait dans le cadre de mon stage de validatin de Master 1.
 
-## LES TECHNOLOGIES :
-### Le Programme :
+## LES TECHNOLOGIES
+
+### Le Programme
+
 + Python : 
   + BeautifulSoup : Pour analyser et extraire les données des pages web.
   + Scrapy : Un framework de web scraping plus robuste et flexible.
@@ -13,13 +15,16 @@ Ce projet est à des fins purement éducatives, personnel et non lucrative. Il e
 + Electron : Pour les application de bureau HTML/CSS et Javascript.
 + MySql : pour la base de données (potentiellement).
 
-### Environnement de Développement :
+### Environnement de Développement
+
 - Virtual Studio Code.
 - Git : Pour le controle des versions.
 - Trello : Pour la gestion de projet.
 
-## ETUDE :
-### Les Besoins :
+## ETUDE
+
+### Les Besoins
+
 * Trouver des profiles.
 * Pour la recherche :
   * Par mots clef.
@@ -30,45 +35,53 @@ Ce projet est à des fins purement éducatives, personnel et non lucrative. Il e
 * Zone d'exploration des résultats.
 * Liens vers les profiles.
   
-### Les données :
+### Les données
+
 Les données devrais être :  
 * Liens.
 * Nom.
 * Adresse mail.
 * Descriptif.
 
-### Réalisation :
+### Réalisation
 
 1. Programmation du Script :
-    - [ ] Phase de connexion
-        - [x] Connexion à la page
-            - [x] Connexion
-                - [x] Options pour les pop-ups
-                - [ ] Options de crédibilité
-            - [ ] Correction de meilleures requêtes
-                - [ ] Redirections vers les pages des profils désirés
-                - [ ] Enregistrement des intitulés de poste
-    - [ ] Extraire les informations
-        - [ ] Parcours de la page
-            - [ ] Sélectionner les profils
-            - [ ] Extraire les données
-        - [ ] Parcourir les autres profils
-2. Phase de traitement
-    - [ ] Créer une structure ou un tableau qui contient les informations par personne
-    - [ ] Vérifier les informations pour éviter les doublons
-    - [ ] Enregistrer ou mettre à jour la base de données
-3. L'interface
-    - [ ] Concevoir une interface utilisateur ergonomique en web
-    - [ ] Ajouter des fonctionnalités
-    - [ ] Ajouter un volet déroulant pour les intitulés de postes
-    - [ ] Transformer cette interface web en application graphique
-4. Juridique
+    1. - [ ] Phase de connexion
+           - [x] Connexion à la page
+           - [x] Options pour les pop-ups
+           - [ ] Options de crédibilité
+           - [ ] Redirections vers les pages des profils désirés
+    2. - [ ] Extraire les informations
+           - [ ] Parcours de la page
+           - [ ] Sélectionner les profils
+           - [ ] Extraire les données
+           - [ ] Parcourir les autres profils
+    3. - [ ] Phase de traitement
+           - [ ] Créer une structure ou un tableau qui contient les informations par personne
+           - [ ] Vérifier les informations pour éviter les doublons
+           - [ ] Enregistrer ou mettre à jour la base de données
+    4. Divers
+           - [ ] Enregistrement des intitulés de poste
+           - [ ] Confections de requêtes complexe
+           - [ ] Options pour les cookies
+2. L'interface
+  1.  - [ ] Concevoir une interface utilisateur ergonomique en web
+  2.  - [ ] Implémentations des fonctionnalités aux bouttons.
+  3.  - [ ] Transformer cette interface web en application graphique
+      - [ ] Options De connexion (headers, auth, etc...)
+      - [ ] Volet déroulant pour les intitulés de postes
+3. Juridique
     - [ ] Envoyer un mail pour les autorisations du bot // robots.txt
-5. Maintenance et mises à jour
-    - [ ] Ajouter des fonctionnalités
-    - [ ] Faire un dashboard pour le backoffice
+    - [ ] Voir avec des avocats.
+4. Maintenance et mises à jour
+    - [ ] étude des fonctionnalités type.
+    - [ ] Dashboard pour le backoffice
 
+### Divers
 
-### Divers :
-- [] En apprendre plus sur les requêtes
-- [] Voir comment sont fait les module de profile et extraire les informations pertinante. 
+   - [ ] En apprendre plus sur les requêtes 
+
+## Les Features
+à remplir
+
+## Documentation

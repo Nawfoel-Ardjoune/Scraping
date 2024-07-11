@@ -1,12 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
-#Les Parametres
-# Likedin sera https://www.linkedin.com/search/results/people/+reste de la requete
+# Les Parametres
+# Likedin : https://www.linkedin.com/search/results/people/+reste de la requete
 # exemple : ?keywords=Gestionnaire%20de%20projets ici avec mot clef (voir les autres options type)
 # potentielement voir le prestataire qui réalise ca.
 # Il y a des accès premium
-url = 'https://fr.wikipedia.org/wiki/Cic%C3%A9ron'
+url = 'https://www.linkedin.com/search/results/people/?keywords=Gestionnaire%20de%20projets'
 
 #Imitation des navigateur de recherche
 headers = {
