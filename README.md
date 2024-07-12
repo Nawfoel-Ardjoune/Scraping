@@ -51,12 +51,11 @@ Les données devrais être :
            - [x] Connexion à la page
            - [x] Options pour les pop-ups
            - [ ] Options de crédibilité
-           - [X] Redirections vers la page des profils
-    2. - [Fonctionnel] Extraire les informations
-           - [ ] Parcours de la page
+           - [x] Redirections vers la page des profils
+    2. - [Problème] Extraire les informations
+           - [ ] Accès aux profils
            - [ ] Sélectionner les profils
-           - [x] Extraire des données
-           - [ ] Parcourir les autres profils
+           - [ ] Extraire des données
     3. - [ ] Phase de traitement
            - [ ] Base de données contenant les informations
            - [ ] Vérifier les informations pour éviter les doublons
