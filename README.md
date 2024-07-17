@@ -52,8 +52,8 @@ Les données devrais être :
            - [x] Options pour les pop-ups
            - [ ] Options de crédibilité
            - [x] Redirections vers la page des profils
-    2. - [Problème] Extraire les informations
-           - [ ] Accès aux profils
+    2. - [Bloqué] Extraire les informations
+           - [Bloqué] Accès aux profils
            - [ ] Sélectionner les profils
            - [ ] Extraire des données
     3. - [ ] Phase de traitement
@@ -86,6 +86,7 @@ Les données devrais être :
    - [ ] En apprendre plus sur les requêtes 
 
 ## Les Features
-à remplir
+A remplir
 
 ## Documentation
+A Remplir
