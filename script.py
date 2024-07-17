@@ -10,47 +10,82 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-def connecter(url, session=None, username=None, password=None, api_key=None, headers=None, data=None, timeout=30, verify_ssl=True, proxies=None):
+def connecter(url, method='GET', username=None, password=None, api_key=None, headers=None, data=None, timeout=30, verify_ssl=True, proxies=None, use_session=False):
     """
     Se connecte à un site web avec les paramètres spécifiés.
 
     Args:
         url (str): URL du site.
+        method (str): Méthode HTTP à utiliser ('GET', 'POST', etc.). Par défaut 'POST'.
         username (str, optional): Nom d'utilisateur. Par défaut None.
         password (str, optional): Mot de passe. Par défaut None.
         api_key (str, optional): Clé API ou token. Par défaut None.
         headers (dict, optional): Headers HTTP additionnels. Par défaut None.
         data (dict, optional): Données de la requête. Par défaut None.
         timeout (int, optional): Délai d'attente avant expiration de la requête. Par défaut 30 secondes.
-        verify_ssl (bool, optional): Vérifier le certificat SSL. Par défaut True.
+        verify_ssl (bool/str, optional): Vérifier le certificat SSL. Peut être un chemin vers un certificat. Par défaut True.
         proxies (dict, optional): Proxies à utiliser pour la connexion. Par défaut None.
+        use_session (bool, optional): Utiliser une session pour la requête. Par défaut False.
 
     Returns:
         response: Réponse de la requête.
     """
-    # Créer une session pour retenir les cookies
-    if session :
+    # Sélectionner la méthode de requête
+    method = method.upper()
+    if method not in ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']:
+        raise ValueError(f"Méthode HTTP non supportée: {method}")
+    
+    # Créer une session ou utiliser une simple requête
+    session = None
+    if use_session:
         session = requests.Session()
-    
-    # Ajouter les headers
+        if headers:
+            session.headers.update(headers)
+        if api_key:
+            session.headers.update({'Authorization': f'Bearer {api_key}'})
+        elif username and password:
+            session.auth = (username, password)
+    else:
+        session = requests
+
+    # Préparer les arguments de la requête
+    request_args = {
+        'url': url,
+        'timeout': timeout,
+        'verify': verify_ssl,
+        'proxies': proxies
+    }
     if headers:
-        session.headers.update(headers)
-    
-    # Ajouter les identifiants ou clé API dans les headers
-    if api_key:
-        session.headers.update({'Authorization': f'Bearer {api_key}'})
-    elif username and password:
-        session.auth = (username, password)
-    
+        request_args['headers'] = headers
+    if data:
+        if method == 'GET':
+            request_args['params'] = data
+        else:
+            request_args['data'] = data
+
     # Faire la requête
     try:
-        response = session.post(url, data=data, timeout=timeout, verify=verify_ssl, proxies=proxies)
+        if method == 'GET':
+            response = session.get(**request_args)
+        elif method == 'POST':
+            response = session.post(**request_args)
+        elif method == 'PUT':
+            response = session.put(**request_args)
+        elif method == 'DELETE':
+            response = session.delete(**request_args)
+        elif method == 'PATCH':
+            response = session.patch(**request_args)
         response.raise_for_status()  # Lève une exception pour les codes d'état HTTP 4xx/5xx
     except requests.exceptions.RequestException as e:
         print(f"Erreur lors de la connexion : {e}")
         return None
+
+    # Fermer la session si utilisée
+    if use_session:
+        session.close()
     
     return response
+
 
 #Parser le contenu de la réponse
 def parsing(response):
@@ -96,11 +131,11 @@ def main():
     }
     
 
-    response = connecter(url)
+    response = connecter(url, headers=headers)
 
     if response:
         print("Connexion réussie!")
-        print("Réponse du serveur :", response.text)
+        print("Réponse du serveur :", response.status_code)
     else:
         print("Échec de la connexion.")
 
