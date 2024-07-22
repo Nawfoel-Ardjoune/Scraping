@@ -1,5 +1,10 @@
-# PROJET DE SCRAPPING
----
+# Projet De Data Extracting Tool
+
+<span style="color: red">
+ATTENTION CHANGEMENT :
+Le projet devient une extension web
+// En développement
+</span>
 
 ## CONTEXT
 Ce projet est à des fins purement éducatives, personnelles et non lucratives. Il est réalisé dans le cadre de mon stage de validation de master 1 informatique.
@@ -19,7 +24,7 @@ Ce projet est à des fins purement éducatives, personnelles et non lucratives. 
 
 - Virtual Studio Code.
 - Git : Pour le controle des versions.
-- Trello : Pour la gestion de projet.
+- Asana : Pour la gestion de projet.
 
 ## ETUDE
 
