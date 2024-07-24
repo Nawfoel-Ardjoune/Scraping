@@ -1,17 +1,24 @@
 {
-  "manifest_version": 1,
-  "name": "Data Extracting Tool",
+  "manifest_version": 3,
+  "name": "LinkedIn Profile Scraper",
   "version": "1.0",
-  "description": "This tool extract some informations from linkedin profile page where you are at",
+  "description": "Scrape LinkedIn profiles and save to a local database",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage",
+    "cookies",
+    "scripting",
+    "https://www.linkedin.com/"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "icons/ia16.png",
+      "48": "icons/ia64.png",
+      "128": "icons/ia128.png"
     }
   },
   "background": {
@@ -19,7 +26,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://www.linkedin.com/search/results/people/*"],
       "js": ["content.js"]
     }
   ]
