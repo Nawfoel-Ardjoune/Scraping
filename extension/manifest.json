@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Profile Scraper",
+  "name": "My Linkedin script",
   "version": "1.0",
-  "description": "Scrape LinkedIn profiles and save to a local database",
+  "description": "Le script me permet de récupérer les informations importantes des profiles",
   "permissions": [
     "activeTab",
     "storage",
     "cookies",
     "scripting",
+    "downloads",
     "https://www.linkedin.com/"
   ],
   "host_permissions": [

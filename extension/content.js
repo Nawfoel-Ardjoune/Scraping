@@ -1,15 +1,17 @@
-//Ici le code du scraper
-// This script is injected into the LinkedIn search results page
 function scrapeProfiles() {
   const profiles = [];
-  document.querySelectorAll('.search-result__info').forEach(profileElement => {
-    const name = profileElement.querySelector('.actor-name').innerText;
-    const position = profileElement.querySelector('.subline-level-1').innerText;
-    const description = profileElement.querySelector('.subline-level-2').innerText;
-    const email = ""; // L'email ne peut être extrait que si visible ou trouvé dans le profil
-
-    const profile = { name, position, description, email };
-    profiles.push(profile);
+  document.querySelectorAll('li.reusable-search__result-container').forEach(profileElement => {
+    let lien, name, description, region;
+    try{
+      lien = profileElement.querySelector('a.app-aware-link ').href;
+      name = profileElement.querySelector('span[aria-hidden="true"]').textContent;
+      description = profileElement.querySelector('div.entity-result__primary-subtitle').textContent;
+      region = profileElement.querySelector('div.entity-result__secondary-subtitle').textContent;
+      const profile = { name, region, description, lien };
+      profiles.push(profile);
+    }catch (error) {
+      console.error(error);
+    }
   });
 
   profiles.forEach(profile => {
