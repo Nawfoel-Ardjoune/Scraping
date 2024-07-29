@@ -1,29 +1,21 @@
-document.getElementById('scrapeProfiles').addEventListener('click', () => {
+document.getElementById('scrape').addEventListener('click', () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.scripting.executeScript(
-      {
-        target: { tabId: tabs[0].id },
-        function: scrapeProfiles,
-      },
-      (results) => {
-        document.getElementById('info').innerText = 'Scraping done!';
-      }
-    );
+    chrome.scripting.executeScript({
+      target: { tabId: tabs[0].id },
+      files: ['content.js']
+    });
   });
 });
 
-function scrapeProfiles() {
-  chrome.runtime.sendMessage({ action: 'scrapeProfiles' });
-}
-
-// Ici la partie pour garder la session ouverte
-//=============================================//
-chrome.cookies.get({ url: "https://www.linkedin.com", name: "li_at" }, (cookie) => {
-  if (cookie) {
-    console.log('LinkedIn session is active');
-    // Vous pouvez utiliser le cookie pour effectuer des requêtes authentifiées si nécessaire
-  } else {
-    console.log('No active LinkedIn session');
+document.getElementById('linkedin').addEventListener('click', () => {
+  const query = document.getElementById('searchBox').value;
+  if (query) {
+    const linkedinSearchUrl = `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(query)}`;
+    chrome.tabs.create({ url: linkedinSearchUrl });
   }
 });
-//============================================//
+
+
+//============//
+//Faire un Bouton pour récupérer un seul profile//
+//============//
