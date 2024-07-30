@@ -13,12 +13,11 @@ a{
   color: white;
 }
 
-h2 {
+h1 {
   color: transparent; /* Nécessaire pour appliquer le dégradé */
-  background: #dd4ddd;
+  background: #4cfffc;
   -webkit-background-clip: text;
   background-clip: text;
- /* Contour du texte */
 }
 
 .input-group {
