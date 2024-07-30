@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 10px;
+  background: radial-gradient(circle, #c75fff, #7be8fe);
+
+}
+
+a{
+  background-color: #007bff;
+  color: white;
+}
+
+h2 {
+  color: transparent; /* Nécessaire pour appliquer le dégradé */
+  background: #dd4ddd;
+  -webkit-background-clip: text;
+  background-clip: text;
+ /* Contour du texte */
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.input-group-prepend {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn.dropdown-toggle::after {
+  content: ' ▼';
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 0; /* Enlever les marges internes */
+  width: max-content; /* Ajuster la largeur au contenu */
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  display: block; /* Afficher les éléments les uns sous les autres */
+  white-space: nowrap; /* Empêcher le retour à la ligne */
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #0056b3;
+}
+
+.input-group-prepend:hover .dropdown-menu {
+  display: block;
+}
+
+.form-control {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: whitesmoke
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.pop {
+  position: relative;
+}

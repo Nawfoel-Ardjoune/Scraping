@@ -17,7 +17,7 @@ function scrape() {
     }
   });
 
-  updateOrCreateExcel(profiles);
+  //updateOrCreateExcel(profiles);
 }
 
 function updateOrCreateExcel(profiles) {

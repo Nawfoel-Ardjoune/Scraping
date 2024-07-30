@@ -7,13 +7,17 @@ document.getElementById('scrape').addEventListener('click', () => {
   });
 });
 
-document.getElementById('linkedin').addEventListener('click', () => {
+document.getElementById('linkedinSearch').addEventListener('click', () => {
   const query = document.getElementById('searchBox').value;
   if (query) {
-    const linkedinSearchUrl = `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(query)}`;
+    const encodedValue = encodeURIComponent(query);
+    const linkedinSearchUrl = `https://www.linkedin.com/search/results/people/?keywords=${encodedValue}`;
     chrome.tabs.create({ url: linkedinSearchUrl });
+  }else {
+    console.log("Erreur : Rien reçu de la searchbox");
   }
 });
+
 
 
 //============//
