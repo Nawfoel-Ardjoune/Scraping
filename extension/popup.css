@@ -14,7 +14,7 @@ a{
 }
 
 h1 {
-  color: transparent; /* Nécessaire pour appliquer le dégradé */
+  color: transparent; 
   background: #4cfffc;
   -webkit-background-clip: text;
   background-clip: text;
@@ -55,16 +55,16 @@ h1 {
   z-index: 1;
   border-radius: 5px;
   margin-top: 5px;
-  padding: 0; /* Enlever les marges internes */
-  width: max-content; /* Ajuster la largeur au contenu */
+  padding: 0; 
+  width: max-content;
 }
 
 .dropdown-menu .dropdown-item {
   padding: 8px 16px;
   cursor: pointer;
   background-color: #007bff;
-  display: block; /* Afficher les éléments les uns sous les autres */
-  white-space: nowrap; /* Empêcher le retour à la ligne */
+  display: block;
+  white-space: nowrap;
   border-radius: 5px;
   margin: 2px;
 }
@@ -83,7 +83,7 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.8);
-  color: whitesmoke
+  color: grey
 }
 
 .btn-primary {
