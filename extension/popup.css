@@ -14,14 +14,11 @@ a{
 }
 
 h1 {
-  color: transparent; 
-  background: #4cfffc;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: aliceblue; 
+  text-shadow: 1px 1px 1px black;
 }
 
 .input-group {
-  margin-bottom: 15px;
   display: flex;
 }
 
@@ -37,7 +34,9 @@ h1 {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
+  margin-bottom: 2%;
 }
+
 
 .btn:hover {
   background-color: #0056b3;
@@ -86,6 +85,7 @@ h1 {
   color: grey
 }
 
+
 .btn-primary {
   background-color: #007bff;
   border: none;
@@ -101,4 +101,9 @@ h1 {
 
 .pop {
   position: relative;
+}
+
+.form-label {
+  color: #f9f9f9;
+  text-shadow: 1px 1px 1px black;
 }
