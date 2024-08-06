@@ -8,7 +8,7 @@
 <body>
   <div class="pop">
     <h1>LinkedIn Scraper</h1>
-
+    <!-- Ici les boutons pour Choisir les réseaux -->
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <button class="btn dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Réseaux</button>
@@ -17,13 +17,19 @@
           <a class="dropdown-item" id="indeedSearch">Indeed</a>
         </div>
       </div>
+      <!-- Le champs de saisie de text pour le poste -->
       <input type="text" id="searchBox" class="form-control" aria-label="Text input with dropdown button" placeholder="Poste">
     </div>
-
+    <!-- Mon boutton de collect de profile -->
     <button class="btn btn-primary" id="scrape">Collecte</button>
     <!-- Ici un button pour tester la selection de fichier et la sauvegarde -->
     <button class="btn btn-primary" id="save">SaveTest</button>
     <div id="info"></div>
+    <!-- Ici la partie qui sert à choisir le fichier -->
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Default file input example</label>
+      <input class="form-control" type="file" id="formFile">
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
