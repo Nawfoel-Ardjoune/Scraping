@@ -1,3 +1,4 @@
+//Action du click sur le bouton de collecte
 document.getElementById('scrape').addEventListener('click', () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.scripting.executeScript({
@@ -7,38 +8,35 @@ document.getElementById('scrape').addEventListener('click', () => {
   });
 });
 
-document.getElementById('save').addEventListener('click', async function() {
-  try {
-      const handle = await window.showSaveFilePicker({
-          suggestedName: 'newfile.txt',
-          types: [{
-              description: 'Text Files',
-              accept: {'text/plain': ['.txt']}
-          }]
-      });
-      
-      const writable = await handle.createWritable();
-      await writable.write('Hello, world!');
-      await writable.close();
-      console.log('File created successfully');
-  } catch (err) {
-      console.error('File creation failed:', err);
-  }
-});
-
+//Action du click sur le bouton de Linkedin
 document.getElementById('linkedinSearch').addEventListener('click', () => {
   const query = document.getElementById('searchBox').value;
   if (query) {
     const encodedValue = encodeURIComponent(query);
-    const linkedinSearchUrl = `https://www.linkedin.com/search/results/people/?keywords=${encodedValue}`;
+    const linkedinSearchUrl = `https://www.linkedin.com/search/results/people/?geoUrn=%5B"104246759"%5D&keywords=${encodedValue}`;
     chrome.tabs.create({ url: linkedinSearchUrl });
   }else {
-    console.log("Erreur : Rien reçu de la searchbox");
+    console.log("Erreur : Une erreur dans la requête du site Linkedin");
   }
 });
 
+//Action du click sur le bouton de Indeed
+document.getElementById('indeedSearch').addEventListener('click', () => {
+  const query = document.getElementById('searchBox').value;
+  if (query) {
+    const encodedValue = encodeURIComponent(query);
+    const indeedSearchUrl = `https://resumes.indeed.com/search?q=${encodedValue}&l=Île-de-France`;
+    chrome.tabs.create({ url: indeedSearchUrl });
+  }else {
+    console.log("Erreur : Une erreur dans la requête du site indeed");
+  }
+});
 
-
-                //============//
-//Faire un Bouton pour récupérer un seul profile//
-                //============//
+//Action du click sur la lecture des fichiers
+document.getElementById('formFile').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (file) {
+      console.log('Selected file:', file.name);
+      // Add your code to handle the selected file
+  }
+});
