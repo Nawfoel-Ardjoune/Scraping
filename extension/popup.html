@@ -17,19 +17,20 @@
           <a class="dropdown-item" id="indeedSearch">Indeed</a>
         </div>
       </div>
-    <!-- Le champs de saisie de text pour le poste -->
-      <input type="text" id="searchBox" class="form-control" aria-label="Text input with dropdown button" placeholder="Poste">
+      <!-- Le champs de saisie de text pour le poste -->
+      <input type="text" id="searchBox" class="form-control" aria-label="Text input with dropdown button" placeholder="Intitulé du Poste">
     </div>
+    
     <!-- Mon boutton de collect de profile -->
     <button class="btn btn-primary" id="scrape">Collecte</button>
+    <input type="number" id="nbProfile" class="form-control" aria-label="number input for profile you want to gather" placeholder="Nombre de profiles">
     
     <!-- Ici la partie qui sert à choisir le fichier -->
     <div class="mb-3">
-      <label for="formFile" class="form-label">Modifier ou créer un fichier</label>
+      <label for="formFile" class="form-label">Modifier fichier existant</label>
       <input class="form-control" type="file" accept=".xls, .xlsx" id="formFile">
     </div>
-    <!-- Ici un button pour tester la selection de fichier et la sauvegarde -->
-    <button class="btn btn-primary" id="save">SaveTest</button>
+
     <div id="info"></div>
   </div>
   <script src="popup.js"></script>
