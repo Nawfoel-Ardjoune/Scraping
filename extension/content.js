@@ -32,7 +32,7 @@ async function save(profiles) {
 
     const writable = await handle.createWritable();
     for (const profile of profiles) {
-      const profileText = `Name: ${profile.name}\nRegion: ${profile.region}\nDescription: ${profile.description}\nLien: ${profile.lien}\n============================\n`;
+      const profileText = `Name: ${profile.name}\nRegion: ${profile.region}\nDescription: ${profile.description}\nLien: ${profile.lien}\n============================\n\n`;
       await writable.write(profileText);
     }
     await writable.close();
