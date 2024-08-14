@@ -1,7 +1,10 @@
 //Action du click sur le bouton de collecte
 document.getElementById('scrape').addEventListener('click', () => {
-  const nbPages = document.getElementById('nbPages').value;
-  console.log("Nombre de pages == ", nbPages);
+  // const nbPages = document.getElementById('nbPages').value;
+  // console.log("Nombre de pages == ", nbPages);
+  // for (let i = 0; i <= nbPages; i++){
+    
+  // }
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.scripting.executeScript({
       target: { tabId: tabs[0].id },
