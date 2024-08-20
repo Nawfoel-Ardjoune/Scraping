@@ -1,4 +1,5 @@
 // Content.js est un fichier dédié aux fonctions qui sont appelées par popup.js
+// Content.js s'applique dans le context d'une page
 
 // Vérifier si 'Profiles' est déjà défini pour éviter la redéclaration
 if (typeof Profiles === 'undefined') {
@@ -74,5 +75,5 @@ async function saveAsCSV(array) {
 
 
 // Exécution de la collecte avec sauvegarde automatique
-scrape(Profiles);
-saveAsCSV(Profiles);
+//scrape(Profiles);
+//saveAsCSV(Profiles);

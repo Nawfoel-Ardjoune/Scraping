@@ -1,0 +1,1 @@
+//Le Background garde les informations tout au long de la session
