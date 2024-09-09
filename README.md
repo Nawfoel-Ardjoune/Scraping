@@ -4,7 +4,8 @@
 Ce projet est à des fins purement éducatives, personnelles et non lucratives. Il est réalisé dans le cadre de mon stage de validation de master 1 informatique.
 
 ## Description
-Ce Programme est une extension web destiné à facilité la recherche de profiles.
+Ce Programme est une extension web destiné à facilité la recherche de profiles sur Linkedin.
+**Je n'assurerai pas la maintenance de cette application**
 
 ## LES TECHNOLOGIES
 Dans cette partie sera détailler les différents aspect du programme
@@ -29,6 +30,7 @@ Dans cette partie sera détailler les différents aspect du programme
 
 ## ETUDE
 Le programme étant réaliser dans le cadre d'un stage de gestion de projet. Je tente ici d'y introduire cet aspect.
+
 ### Les Besoins
 
 * Trouver des profiles.
@@ -62,13 +64,19 @@ Ce extension est designer pour fonctionner sur microsoft edge, les protocoles so
 3. C'est à vous de l'utiliser
 
 ## Documentation
+
+### L'interface
  L’utilisateur clique sur l’icône de l’extension, ce qui ouvre une petite fenêtre (l'interface).
  On y trouve :  
- — Un menu déroulant lorque l'on passe la souris sur "réseaux" avec deux options, une pour vous rendre sur le site de
+ *  Un menu déroulant lorque l'on passe la souris sur "réseaux" avec deux options, une pour vous rendre sur le site de
  LinkedIn et l’autre sur le site d’Indeed.  
- — À côté du bouton déroulant se trouve un champ pour que l’utilisateur y
+ * À côté du bouton déroulant se trouve un champ pour que l’utilisateur y
  entre le poste des profils qu’il recherche, le but est d’abord d’y entrer votre
  recherche avant de cliquer sur l’un des choix du menu déroulant. Ce qui ouvre une page vers les profiles rechercher ou vers la page de connexion du site.  
- — On retrouve ensuite un bouton de collecte qui sert à sauvegarder la page
+ * On retrouve ensuite un bouton de collecte qui sert à sauvegarder la page
  sur laquelle nous sommes. Les profiles seront sauvegarder dans un fichier CSV exploitable par la majorité des tableurs.  
- — Un champ suit le bouton de collecte et sert à indiqué le nombre de page que l'on souhaite sauvegarder. Des petit boutons à droite de ce champs permettent d'incrémenter et ou de décrémenter le nombre de page que l'on souhaite collecter.  
+ * Un champ suit le bouton de collecte et sert à indiqué le nombre de page que l'on souhaite sauvegarder. Des petit boutons à droite de ce champs permettent d'incrémenter et ou de décrémenter le nombre de page que l'on souhaite collecter.  
+
+ ### Le code
+ Certain paramétre sont régler directement dans le code. J'ai ajouter des commentaire afin que cela soit relativement simple à comprendre.
+ + Le tri par région est paramétré directement dans la fabrication de la requête URI.
