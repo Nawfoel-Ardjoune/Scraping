@@ -1,25 +1,96 @@
-// Stocker les références des onglets ouverts
-if (typeof openedTabs == "undefined"){
-  let openedTabs = [];
-}
-
-// Action du click sur le bouton de collecte
 document.getElementById('scrape').addEventListener('click', () => {
-  // Test de la valeur du nombre de page
-  if (!document.getElementById('nbPages').value){
-    nbPages = 1;
-    console.log("Par default NbPages ==",nbPages);
-  } else {
-    let nbPages = document.getElementById('nbPages').value;
-    console.log("Avec valeur Nombre de pages == ", nbPages);
-  }
+  const nbPages = document.getElementById('nbPages').value || 1;
+
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.scripting.executeScript({
-    target: { tabId: tabs[0].id },
-    files: ['content.js']
-    }); // Ajouter ici l'appel aux fonctions de content.js
+    const activeTab = tabs[0];
+    scrapePages(activeTab.id, nbPages);
   });
 });
+
+function scrapePages(tabId, nbPages, currentPage = 1) {
+  if (currentPage <= nbPages) {
+    // Exécuter le script de collecte sur la page courante
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      func: () => {
+        // Simuler un défilement vers le bas pour charger le contenu
+        window.scrollTo(0, document.body.scrollHeight);
+
+        const profiles = [];
+        document.querySelectorAll('li.reusable-search__result-container').forEach(profileElement => {
+          try { 
+            const lien = profileElement.querySelector('a.app-aware-link').href;
+            const name = profileElement.querySelector('span[aria-hidden="true"]').textContent.trim();
+            const description = profileElement.querySelector('div.entity-result__primary-subtitle').textContent.trim();
+            const region = profileElement.querySelector('div.entity-result__secondary-subtitle').textContent.trim();
+
+            const profile = { name, region, description, lien };
+            profiles.push(profile);
+          } catch (error) {
+            console.error("Erreur lors de la collecte : ", error);
+          }
+        });
+
+        chrome.runtime.sendMessage({ action: 'addProfiles', profiles: profiles }, response => {
+          console.log(response.status);
+        });
+      }
+    }, () => {
+      console.log(`Scraping de la page ${currentPage} terminé.`);
+
+      // Naviguer à la page suivante en cliquant sur le bouton de pagination avec un délai aléatoire
+      if (currentPage < nbPages) {
+        const delay = Math.floor(Math.random() * (3000 - 1500 + 1)) + 1500; // Augmenter le délai aléatoire entre 1500 et 3000 ms
+        setTimeout(() => {
+          chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            func: (pageNumber) => {
+              const button = document.querySelector(`button[aria-label="Page ${pageNumber}"]`);
+              if (button) {
+                button.click();
+              } else {
+                console.error(`Bouton pour la page ${pageNumber} non trouvé.`);
+              }
+            },
+            args: [currentPage + 1]
+          }, (results) => {
+            if (chrome.runtime.lastError) {
+              console.error("Erreur lors de l'exécution du script de pagination : ", chrome.runtime.lastError);
+              handleServerError(tabId, nbPages, currentPage);
+              return;
+            }
+            
+            // Attendre que la page suivante soit chargée avant de scraper à nouveau
+            chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
+              if (info.status === 'complete') {
+                chrome.tabs.onUpdated.removeListener(listener);
+                setTimeout(() => { 
+                  scrapePages(tabId, nbPages, currentPage + 1);
+                } ,2000);
+              }
+            });
+          });
+        }, delay);
+      } else {
+        // Sauvegarder les profils après avoir scrappé toutes les pages
+        chrome.runtime.sendMessage({ action: 'saveProfiles' }, response => {
+          console.log(response.status);
+        });
+      }
+    });
+  }
+}
+
+function handleServerError(tabId, nbPages, currentPage) {
+  // Gérer les erreurs du serveur en ajoutant un délai plus long
+  const retryDelay = Math.floor(Math.random() * (60000 - 30000 + 1)) + 30000; // Attendre entre 30 et 60 secondes
+  console.warn(`Erreur serveur rencontrée. Reprise dans ${retryDelay / 1000} secondes...`);
+  setTimeout(() => {
+    scrapePages(tabId, nbPages, currentPage);
+  }, retryDelay);
+}
+
+
 
 //Action du click sur le bouton de Linkedin
 document.getElementById('linkedinSearch').addEventListener('click', () => {
@@ -53,39 +124,3 @@ document.getElementById('formFile').addEventListener('change', function(event) {
       // Add your code to handle the selected file
   }
 });
-
-//Fonction de delais pour ne par surcharger et se faire bloquer
-function delay(callback) {
-  const minTime = 350;
-  const maxTime = 1350;
-  const randomDelay = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-  setTimeout(callback, randomDelay);
-}
-
-function scrollToBottom() {
-  window.scrollTo(0, document.body.scrollHeight);
-}
-
-// Fonction pour ouvrir de nouveaux onglets et en fonctions de nbPages
-// Cette fonction n'est pas terminé
-function openNewTabs(nbPages) {
-  // Ouvrir les nouveaux onglets
-  for (let i = 0; i<nbPages;i++){
-    //Fabriquer des tabs pour recuperer les informations 
-    openedTabs.push(window.open('https://example.com', '_blank'));
-  }
-  // Appeler une fonction sur chaque onglet après un délai pour s'assurer qu'ils sont bien ouverts
-  setTimeout(() => {
-    openedTabs.forEach((tab, index) => {
-      if (tab) {
-        // Exemple : écrire un message dans la console de l'onglet
-        tab.console.log(`Hello from tab ${index + 1}`);
-        // Ou changer le titre de l'onglet
-        tab.document.title = `New Tab ${index + 1}`;
-      } else {
-        console.log(`Tab ${index + 1} could not be opened or was blocked by the browser.`);
-      }
-    });
-  }, 1000); // Délai de 1 seconde pour que les onglets se chargent correctement
-}
-

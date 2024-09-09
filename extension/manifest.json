@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "My Linkedin script",
-  "version": "1.0",
-  "description": "Le script me permet de récupérer les informations importantes des profiles",
+  "version": "2.0",
+  "description": "Le script me permet d'accéder rapidement à des profiles",
   "permissions": [
     "activeTab",
     "storage",
@@ -24,11 +24,6 @@
   },
   "background": {
     "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://www.linkedin.com/search/results/people/*"],
-      "js": ["content.js"]
-    }
-  ]
+  }
+  
 }
