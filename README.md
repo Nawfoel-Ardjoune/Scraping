@@ -63,12 +63,12 @@ Ce extension est designer pour fonctionner sur microsoft edge, les protocoles so
 
 ## Documentation
  L’utilisateur clique sur l’icône de l’extension, ce qui ouvre une petite fenêtre (l'interface).
- On y trouve :
+ On y trouve :  
  — Un menu déroulant lorque l'on passe la souris sur "réseaux" avec deux options, une pour vous rendre sur le site de
- LinkedIn et l’autre sur le site d’Indeed.
+ LinkedIn et l’autre sur le site d’Indeed.  
  — À côté du bouton déroulant se trouve un champ pour que l’utilisateur y
  entre le poste des profils qu’il recherche, le but est d’abord d’y entrer votre
- recherche avant de cliquer sur l’un des choix du menu déroulant. Ce qui ouvre une page vers les profiles rechercher ou vers la page de connexion du site.
+ recherche avant de cliquer sur l’un des choix du menu déroulant. Ce qui ouvre une page vers les profiles rechercher ou vers la page de connexion du site.  
  — On retrouve ensuite un bouton de collecte qui sert à sauvegarder la page
- sur laquelle nous sommes. Les profiles seront sauvegarder dans un fichier CSV exploitable par la majorité des tableurs.
- — Un champ suit le bouton de collecte et sert à indiqué le nombre de page que l'on souhaite sauvegarder. Des petit boutons à droite de ce champs permettent d'incrémenter et ou de décrémenter le nombre de page que l'on souhaite collecter.
+ sur laquelle nous sommes. Les profiles seront sauvegarder dans un fichier CSV exploitable par la majorité des tableurs.  
+ — Un champ suit le bouton de collecte et sert à indiqué le nombre de page que l'on souhaite sauvegarder. Des petit boutons à droite de ce champs permettent d'incrémenter et ou de décrémenter le nombre de page que l'on souhaite collecter.  
