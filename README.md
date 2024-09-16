@@ -49,13 +49,13 @@ Cette extension est conçue pour fonctionner sur Microsoft Edge, les protocoles 
 2. Extraire le dossier "extension" de l'archive.
 3. Installer l'extension dans votre navigateur : Lien pour Edge :
   1. Rendez-vous dans la section "Extensions" de votre navigateur.
-  ![Texte alternatif](./Images/Screenshot_menu.png "L'image du menu"){width=50%}
+  ![Texte alternatif](./Images/Screenshot_menu.png "L'image du menu")
   2. Activez le mode développeur.
-  ![Texte alternatif](./Images/Screenshot_etape2.png "L'image de l'activation"){width=50%}
+  ![Texte alternatif](./Images/Screenshot_etape2.png "L'image de l'activation")
   3. Cliquez sur "Charger une extension décompressée" en haut de la section des extensions.
   4. Une fenêtre va s'ouvrir, choisissez le dossier "extension" que vous venez de télécharger.
   5. Activez l'extension.
-  ![Texte alternatif](./Images/Screenshot_result.png "L'image du résultat"){width=50%}
+  ![Texte alternatif](./Images/Screenshot_result.png "L'image du résultat")
 4. L'extension est prête à être utilisée.
 
 ## Documentation
