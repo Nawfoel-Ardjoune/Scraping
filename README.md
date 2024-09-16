@@ -1,82 +1,79 @@
-# Projet De Data Extracting Tool
+# Projet de Data Extracting Tool
+### Contexte
+Ce projet est à des fins purement éducatives, personnelles et non lucratives. Il est réalisé dans le cadre de mon stage de validation de Master 1 Informatique.
 
-## CONTEXT
-Ce projet est à des fins purement éducatives, personnelles et non lucratives. Il est réalisé dans le cadre de mon stage de validation de master 1 informatique.
+### Description
+Ce programme est une extension web destinée à faciliter la recherche de profils sur LinkedIn. Je n'assurerai pas la maintenance de cette application.
 
-## Description
-Ce Programme est une extension web destiné à facilité la recherche de profiles sur Linkedin.
-**Je n'assurerai pas la maintenance de cette application**
+## Les technologies
+Dans cette partie, les différents aspects du programme seront détaillés.
 
-## LES TECHNOLOGIES
-Dans cette partie sera détailler les différents aspect du programme
+## Le programme
++ HTML : pour réaliser l'interface.
++ CSS : pour le style de l'interface.
++ JavaScript : pour l'ensemble des fonctions.
+### Les fichiers
++ popup.html : Interface de l'extension.
++ popup.css : Fichier de style de l'interface.
++ popup.js : Fichier de gestion des fonctions de la page web.
++ background.js : Fichier de sauvegarde des profils des différentes pages.
++ manifest.json : Fichier descriptif de l'extension pour le navigateur.
+### Environnement de développement
++ Visual Studio Code.
++ Git : pour le contrôle des versions.
++ Asana : pour la gestion de projet.
 
-### Le Programme
-+ HTML : pour réaliser l'interface
-+ CSS : Pour le style de l'interface
-+ Javascript : L'ensemble des fonctions
+## Étude
+Le programme étant réalisé dans le cadre d'un stage en gestion de projet, j'introduis ici cet aspect.
 
-### Les Fichiers
-+ Popup.html : Interface de l'extension
-+ Popup.css : Fichier de style de l'interface
-+ popup.js : Fichier de gestion des fonctions de la page web
-+ background.js : Fichier de sauvegarde des profiles des différentes pages
-+ manifest.json : Fichier descriptif de l'extension pour le navigateur
-
-### Environnement de Développement
-
-- Virtual Studio Code.
-- Git : Pour le controle des versions.
-- Asana : Pour la gestion de projet.
-
-## ETUDE
-Le programme étant réaliser dans le cadre d'un stage de gestion de projet. Je tente ici d'y introduire cet aspect.
-
-### Les Besoins
-
-* Trouver des profiles.
-* Pour la recherche :
-  * Par mots clef.
-  * Par poste (agglomératiion des intitulé de poste).
-* Résultat enregistrable.
+### Les besoins
+* Trouver des profils.
+Pour la recherche :
+* Par mots-clés.
+* Par poste (regroupement des intitulés de poste).
+* Résultats enregistrables.
 * Interface graphique.
-* Zone d'exploration des résultats.
-* Liens vers les profiles.
-  
+* Liens vers les profils.
 ### Les données
-Ce programme est capable de sauvegarder les informations des profiles dans un fichier CSV exploitable par tout les Tableurs.
-Les données devrais être :  
-* Liens du profile.
+Ce programme est capable de sauvegarder les informations des profils dans un fichier CSV exploitable par tous les tableurs. Les données devraient être :
+
+* Lien du profil.
 * Nom complet.
 * Localisation.
 * Descriptif.
 
-### Installation
+## Installation
+Cette extension est conçue pour fonctionner sur Microsoft Edge, les protocoles étant les mêmes que sur Chrome.
 
-Ce extension est designer pour fonctionner sur microsoft edge, les protocoles sont les même que sur chrome.
-1. télécharger l'extensions
-2. Installer l'extension dans votre navigateur:
-       ici le lien pour edge : https://support.microsoft.com/fr-fr/microsoft-edge/ajouter-d%C3%A9sactiver-ou-supprimer-des-extensions-dans-microsoft-edge-9c0ec68c-2fbc-2f2c-9ff0-bdc76f46b026.  
-       1. Rendez-vous dans la section extension des paramètres de votre navigateur.  
-       2. Activez le mode développer.  
-       3. cliquez sur "charger une extension compresser" en haut de la section extension.  
-       4. Une fenêtre va s'ouvrir, choississez l'extension que vous venez de télécharger.  
-       5. Activer l'extension.  
-3. C'est à vous de l'utiliser
+1. Télécharger l'extension à jour.
+2. Extraire le dossier "extension" de l'archive.
+3. Installer l'extension dans votre navigateur : Lien pour Edge :
+  1. Rendez-vous dans la section "Extensions" de votre navigateur.
+  ![Texte alternatif](./Images/Screenshot_menu.png "L'image du menu"){width=50%}
+  2. Activez le mode développeur.
+  ![Texte alternatif](./Images/Screenshot_etape2.png "L'image de l'activation"){width=50%}
+  3. Cliquez sur "Charger une extension décompressée" en haut de la section des extensions.
+  4. Une fenêtre va s'ouvrir, choisissez le dossier "extension" que vous venez de télécharger.
+  5. Activez l'extension.
+  ![Texte alternatif](./Images/Screenshot_result.png "L'image du résultat"){width=50%}
+4. L'extension est prête à être utilisée.
 
 ## Documentation
-
 ### L'interface
- L’utilisateur clique sur l’icône de l’extension, ce qui ouvre une petite fenêtre (l'interface).
- On y trouve :  
- *  Un menu déroulant lorque l'on passe la souris sur "réseaux" avec deux options, une pour vous rendre sur le site de
- LinkedIn et l’autre sur le site d’Indeed.  
- * À côté du bouton déroulant se trouve un champ pour que l’utilisateur y
- entre le poste des profils qu’il recherche, le but est d’abord d’y entrer votre
- recherche avant de cliquer sur l’un des choix du menu déroulant. Ce qui ouvre une page vers les profiles rechercher ou vers la page de connexion du site.  
- * On retrouve ensuite un bouton de collecte qui sert à sauvegarder la page
- sur laquelle nous sommes. Les profiles seront sauvegarder dans un fichier CSV exploitable par la majorité des tableurs.  
- * Un champ suit le bouton de collecte et sert à indiqué le nombre de page que l'on souhaite sauvegarder. Des petit boutons à droite de ce champs permettent d'incrémenter et ou de décrémenter le nombre de page que l'on souhaite collecter.  
+L’utilisateur clique sur l’icône de l’extension, ce qui ouvre une petite fenêtre (l'interface). On y trouve :
 
- ### Le code
- Certain paramétre sont régler directement dans le code. J'ai ajouter des commentaire afin que cela soit relativement simple à comprendre.
- + Le tri par région est paramétré directement dans la fabrication de la requête URI.
++ Un menu déroulant lorsque l'on passe la souris sur "réseaux" avec deux options : une pour se rendre sur le site de LinkedIn, et l’autre sur le site d’Indeed.
++ À côté du bouton déroulant se trouve un champ pour que l’utilisateur entre le poste des profils recherchés. L’utilisateur doit d’abord entrer sa recherche avant de cliquer sur l’un des choix du menu déroulant. Cela ouvre une page vers les profils recherchés ou vers la page de connexion du site.
++ Un bouton de collecte qui sert à sauvegarder la page sur laquelle l’utilisateur se trouve. Les profils seront sauvegardés dans un fichier CSV exploitable par la majorité des tableurs.
++ Un champ après le bouton de collecte permet d'indiquer le nombre de pages que l'on souhaite sauvegarder. De petits boutons à droite de ce champ permettent d'incrémenter ou de décrémenter le nombre de pages à collecter.
+
+### Le code
+Certains paramètres sont configurés directement dans le code. J'ai ajouté des commentaires afin de faciliter la compréhension.
+Le tri par région est paramétré directement dans la construction de la requête URI.
+
+## Problèmes possibles
+* Parfois, le logiciel Excel ne lit pas correctement le fichier CSV et ne sépare pas les champs.
+  1. Il faut ouvrir une nouvelle page Excel.
+  2. Trouver l'option "Importer les données" dans le menu Excel.
+  3. Un menu s'ouvre, et il faut configurer le séparateur sur la virgule ",".
+  4. Valider l'import, la séparation devrait être correcte.
